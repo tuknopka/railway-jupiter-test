@@ -1,4 +1,5 @@
 import requests
+import time
 
 url = "https://price.jup.ag/v4/dlmm/reference-fees"
 
@@ -8,3 +9,7 @@ try:
     print(r.text[:500])
 except Exception as e:
     print(f"❌ ERROR: {e}")
+
+# Не дать Railway сразу завершиться:
+while True:
+    time.sleep(60)
